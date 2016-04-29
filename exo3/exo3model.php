@@ -14,7 +14,7 @@ $c = 0;
 $d = 0;
 $e = 0;
 
-$stmt = $pdo->prepare('SELECT * FROM magazines ORDER BY ID');
+$stmt = $pdo->prepare('SELECT * FROM magazines ORDER BY ID');//affiche la liste de tous les magazines
 $stmt->execute();
 $result = [];
 foreach($stmt as $row){

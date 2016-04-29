@@ -11,10 +11,10 @@ require_once ("exo3/exo3model.php");
 <body>
 <?php foreach($result as $row){?>
    <ul>
-       <li><?php echo $row['nom_magazine'] ?></li>
-       <li><?php echo $row['type'] ?></li>
-       <li><?php echo $row['date'] ?></li>
-       <li><?php echo $row['parution'] ?></li>
+       <li>Nom : <?php echo $row['nom_magazine'] ?></li>
+       <li>Type : <?php echo $row['type'] ?></li>
+       <li>Date : <?php echo $row['date'] ?></li>
+       <li>Parution : <?php echo $row['parution'] ?></li>
    </ul>
 <?php }?>
 Géo :

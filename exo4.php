@@ -14,7 +14,6 @@ if(isset($_POST)){
                 $md5 = $md5."\n";
                 $getFile = fgets($file);
                 fputs($file, $passwordHash);
-                fputs($file, $md5);
                 fclose($file);
             }
         }elseif($_POST['id'] == 2){//si l'utilisateur se connecte
@@ -24,6 +23,8 @@ if(isset($_POST)){
             while (($data = fgetcsv($handle)) !== FALSE) {
                 $login[] = $data;
             }
+            $passwordHash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
         }
 }
 

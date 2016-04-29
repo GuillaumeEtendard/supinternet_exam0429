@@ -16,7 +16,7 @@ class Jeu
     public function turn($tab, $turn1, $turn2)
     {
         if (!isset($_POST['choice']) || empty($_POST['choice'])) {
-            echo "Veuillez selectionner entre 1 et 3 allumettes pour jouer svp";
+            echo "Sélectionner 1 à 3 allumettes";
         } else {
             foreach ($_POST as $i) {
                 $choiceAllumettes = $i;
@@ -46,7 +46,7 @@ class Jeu
                 unset($tab[$index3]);
 
             } elseif (count($allumettes) >= 4) {
-                echo "vous ne pouvez pas choisir plus de 3 allumettes par tour !";
+                echo "Maximum 3 allumettes par tour";
             }
             return $tab;
         }
@@ -80,7 +80,7 @@ class Jeu
 
 }
 
-$game = new Jeu("Joueur", "Ordinateur");
+$game = new Jeu("Joueur", "Ordinateur");//initialise le jeu
 $allumettes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'];
 $turn1 = $game->getTurnPlayerOne();
 $turn2 = $game->getTurnPlayerTwo();
@@ -92,6 +92,7 @@ if ($turn1 == $turn2) {
 } elseif ($turn2 <= $turn1) {
     $turnJ2 = $game->j2Turn($turn2);
 }
+//Manque : systeme de comptage de tours pour l'utilisateur et pour l'ordinateur
 ?>
 
 <!doctype html>
