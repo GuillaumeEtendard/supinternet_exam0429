@@ -13,7 +13,7 @@ class Jeu
         $this->joueur2 = $playerTwo;
     }
 
-    public function turn($tab, $turn1, $turn2)
+    public function turn($tab)
     {
         if (!isset($_POST['choice']) || empty($_POST['choice'])) {
             echo "Sélectionner 1 à 3 allumettes";
